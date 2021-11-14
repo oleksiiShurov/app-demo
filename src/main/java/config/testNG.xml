@@ -1,0 +1,11 @@
+<suite name="My suite">
+    <listeners>
+        <listener class-name="config.influxGrafana.ExecutionListener" />
+    </listeners>
+    <test name="Test1">
+        <classes>
+            <class name="PositiveLoginTest"/>
+
+        </classes>
+    </test>
+</suite>

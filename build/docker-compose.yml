@@ -1,0 +1,39 @@
+version: "2"
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: always
+    links:
+      - influxdb
+    ports:
+      - 4000:3000
+    networks:
+      - monitoring
+    volumes:
+      - grafana-volume:/var/lib/grafana
+  influxdb:
+    image: influxdb
+    container_name: influxdb
+    restart: always
+    ports:
+      - 8086:8086
+    networks:
+      - monitoring
+    volumes:
+      - influxdb-volume:/var/lib/influxdb
+    environment:
+      - INFLUXDB_DB=android_test_results
+      - INFLUXDB_USER=admin
+      - INFLUXDB_ADMIN_ENABLED=true
+
+      - INFLUXDB_ADMIN_USER=admin
+      - INFLUXDB_ADMIN_PASSWORD=AlexSh1233
+
+networks:
+  monitoring:
+volumes:
+  grafana-volume:
+    external: true
+  influxdb-volume:
+    external: true
