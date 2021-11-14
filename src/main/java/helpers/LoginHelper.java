@@ -38,9 +38,9 @@ public class LoginHelper {
 
     public  LoginHelper login(String Platform) {
         this.openMainPage();
-        this.setEmail("oleksii.shurov@ninetwothree.co");
+        this.setEmail("test@test.com");
         this.btnClick();
-        this.setPassword("AlexSh1233");
+        this.setPassword("test");
         LoginPage.getBtnLogin().click();
         return this;
     }
@@ -54,7 +54,7 @@ public class LoginHelper {
 
     public  LoginHelper signUp(String Platform) {
         this.openMainPage();
-        this.setEmail(EmailGenerator.getEmailString()+"@ninetwothree.co");
+        this.setEmail(EmailGenerator.getEmailString()+"@test.com");
         this.btnClick();
         this.setPersonalData("Test1","Test1","Testtest1","Testtest1");
         LoginPage.getSignUpBtn().click();
@@ -70,19 +70,5 @@ public class LoginHelper {
 
     }
 
-
-//    public LoginHelper waitOpened() {
-//        assertTrue(commonElements.getLogo().isDisplayed());
-//        assertTrue(LoginPage.getTitle().isDisplayed());
-//        assertTrue(LoginPage.getTitle().isDisplayed());
-//        String titleText = LoginPage.getTitle().getText();
-//        assertTrue(LoginPage.getSignInBtn().isDisplayed());
-//        assertTrue(LoginPage.getSignUp().isDisplayed());
-//        assertTrue(getForgotPassBtn().isDisplayed());
-//        assertTrue(LoginPage.getPasswordField().isDisplayed());
-//        assertTrue(LoginPage.getLoginButton().isDisplayed());
-//        assertTrue(LoginPage.getShowPassword().isDisplayed());
-//        return this;
-//    }
 
 }
